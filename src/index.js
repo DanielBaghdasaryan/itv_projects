@@ -18,7 +18,7 @@ import Derenik from './components/Derenik'
 import Erik from './components/Erik'
 import reportWebVitals from './reportWebVitals'
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
 } from "react-router-dom"
@@ -26,8 +26,7 @@ import {
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <div>aaa</div>
-    <Router>
+    <Router basename="/">
       <Routes>
         <Route path="/vahe" element={<Vahe />} />
         <Route path="/nare" element={<Nare />} />
