@@ -20,7 +20,7 @@ import reportWebVitals from './reportWebVitals'
 import {
   HashRouter as Router,
   Routes,
-  Route,
+  Route
 } from "react-router-dom"
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
