@@ -64,7 +64,7 @@ function App() {
 
         <div>
           {names.map((x, i) => <div
-            key={i} onDoubleClick={() => setHrashaliqN(i)}
+            key={i} onClick={() => setHrashaliqN(i)}
             style={{ border: "1px solid black", borderRadius: "20px", padding: 20, margin: 20, backgroundColor: "azure", width: "500px", cursor: 'pointer' }}>{x.hrashaliq}</div>)}
         </div>
 
