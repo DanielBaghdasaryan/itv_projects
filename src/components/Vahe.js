@@ -63,8 +63,6 @@ function App() {
 
         <div>
           <img src={wonders[wonderN].img} height={"200px"} width={"300px"} alt="" />
-          {wonders.description}
-
         </div>
 
 

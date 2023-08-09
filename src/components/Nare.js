@@ -390,8 +390,8 @@ function App() {
     <div style={{ width: "100%", display: "flex" }}>
       <table>
         <tbody>
-          {names.map((king, index) => <tr key={index}>
-            <td style={{ border: "1px solid black", padding: "10px", cursor: "pointer" }} onClick={() => { setArqa(arqa.name === king.name ? "" : king) }}>{king.name}</td>
+          {names.map((king, index) => <tr style={{ backgroundColor: arqa.name === king.name ? "red" : "white" }} key={index}>
+            <td style={{ border: "1px solid black", padding: "10px", cursor: "pointer" }} onClick={() => { setArqa(king) }}>{king.name}</td>
             <td style={{ border: "1px solid black", padding: "10px" }}>{king.construction}</td>
           </tr>
           )}

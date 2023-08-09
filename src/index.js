@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import Vahe from './components/Vahe'
+import Daniel from './components/Daniel'
 import Nare from './components/Nare'
 import Gohar from './components/Gohar'
 import Meri from './components/Meri'
@@ -28,6 +29,7 @@ root.render(
   <React.StrictMode>
     <Router basename="/">
       <Routes>
+        <Route path="/daniel" element={<Daniel />} />
         <Route path="/vahe" element={<Vahe />} />
         <Route path="/nare" element={<Nare />} />
         <Route path="/gohar" element={<Gohar />} />
