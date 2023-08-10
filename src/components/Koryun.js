@@ -76,7 +76,7 @@ function App() {
 
               key={i}
               onClick={() => setRegionN(i)}
-              style={{ border: "1px solid black", cursor: 'pointer', backgroundColor: "aqua", fontWeight: "bold" }}
+              style={{ border: "1px solid black", cursor: 'pointer', backgroundColor: i === regionN ? "red" : "white", fontWeight: "bold" }}
             >
               {x.name}
             </div>
@@ -97,3 +97,10 @@ function App() {
 
 }
 export default App
+
+
+
+
+
+
+

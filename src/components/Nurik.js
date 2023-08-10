@@ -4,6 +4,7 @@ import { useState } from 'react'
 function App() {
 
   const [hrashaliqner, setHrashaliqner] = useState(0)
+  const [n, setN] = useState(0)
 
   const hrashaliq = [
     {
@@ -55,13 +56,26 @@ function App() {
               onClick={() => setHrashaliqner(i)}
               style={{ border: "2px solid black", width: "300px", height: "45px", padding: "20px" }}>
               {x.name} </div>)}
-        </div>
-        <div style={{ border: "2px solid black", width: "800px", height: "662px", padding: "20px", }}>
-          {hrashaliq[hrashaliqner].dascription}
+
+
+          <div style={{ border: "2px solid black", width: "800px", height: "662px", padding: "20px", }}>
+            {hrashaliq[hrashaliqner].dascription}
+            <div>
+              <div></div> {
+                hrashaliq.map(
+                  (x, i) => <div
+                    onClick={() => setN(i)}
+                    style={{ backgroundColor: i === n ? "red" : "width", cursor: 'poynter' }}
+                  >
+
+                  </div>)
+              }
+            </div>
+          </div>
         </div>
       </div>
-    </div >
 
+    </div>
   )
 }
 
