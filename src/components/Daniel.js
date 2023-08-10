@@ -5,19 +5,38 @@ function App() {
 
   const [n, setN] = useState(0)
 
-  const cucak = [
-    "vazgen", "babken", "tigran"
+  const regions = [
+    {
+      name: "ararat",
+      description: "blablabla"
+    },
+    {
+      name: "ararat",
+      description: "blablabla"
+    },
+    {
+      name: "ararat",
+      description11: "blablabla",
+      photo: "https://ksjfbck.jpg"
+    },
   ]
+
 
   return (
     <div>
       {
-        cucak.map(
+        regions.map(
           (x, i) => <div
             onClick={() => setN(i)}
             style={{ backgroundColor: i === n ? "red" : "white", cursor: 'pointer' }}
-          >{x}</div>)
+          >{x.name}</div>)
       }
+      <div>
+        <div>"blablabla"</div>
+        <img src="https://ksjfbck.jpg" />
+      </div>
+
+
     </div>
   )
 }
