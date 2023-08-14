@@ -1,42 +1,36 @@
 import { useState } from "react"
-
+import { x } from "./daniel_json"
 
 function App() {
 
-  const [n, setN] = useState(0)
+  const [regionN, setRegionN] = useState(0)
 
-  const regions = [
-    {
-      name: "ararat",
-      description: "blablabla"
-    },
-    {
-      name: "ararat",
-      description: "blablabla"
-    },
-    {
-      name: "ararat",
-      description11: "blablabla",
-      photo: "https://ksjfbck.jpg"
-    },
-  ]
-
+  const regions = [{
+    name: 'ararat',
+    description: [
+      {
+        title: "title 1",
+        paragraph: "paraghraph 1"
+      },
+      {
+        title: "title 2",
+        paragraph: "paraghraph 2"
+      },
+    ]
+  }]
 
   return (
     <div>
       {
-        regions.map(
-          (x, i) => <div
-            onClick={() => setN(i)}
-            style={{ backgroundColor: i === n ? "red" : "white", cursor: 'pointer' }}
-          >{x.name}</div>)
+        regions[regionN].description.map(
+          (x, i) => (
+            <div key={i} style={{ backgroundColor: i % 2 ? 'red' : null }}>
+              <div>{x.title}</div>
+              <div>{x.paragraph}</div>
+            </div>
+          )
+        )
       }
-      <div>
-        <div>"blablabla"</div>
-        <img src="https://ksjfbck.jpg" />
-      </div>
-
-
     </div>
   )
 }
