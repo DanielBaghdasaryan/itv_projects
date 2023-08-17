@@ -56,7 +56,7 @@ function App() {
   ]
   return (
     <div>
-      <div style={{ border: "10px solid black", backgroundColor: "rgb(150, 150, 150)" }}>ՀԱՅ ՄԵԾ ԳՐՈՂՆԵՐ</div>
+      <div style={{ border: "10px solid black", backgroundColor: "rgb(150, 150, 150)", display: 'flex', justifyContent: 'center' }}>ՀԱՅ ՄԵԾ ԳՐՈՂՆԵՐ</div>
       <div style={{ display: "flex" }}>
         <div>
           {regions.map(
@@ -73,8 +73,7 @@ function App() {
           {regions[regionN].description}
         </div>
         <div>
-          <img src={regions[regionN].img} style={{ width: 400 }} />
-
+          <img src={regions[regionN].img} style={{ height: 300 }} />Հայ մեծ գրող
         </div>
       </div>
     </div>

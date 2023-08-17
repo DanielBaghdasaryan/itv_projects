@@ -54,12 +54,16 @@ function App() {
       description: "Վայոց ձորի մարզը ՀՀ մարզերի շարքում տարածքի մեծությամբ գրավում է միջին տեղ, իսկ բնակչության թվով ամենափոքր մարզն է։ Մարզը զբաղեցնում է 2308 քառ.կմ մակերես, հյուսիսից սահմանակից է Գեղարքունիքի մարզին, հյուսիսարևելքից` Արցախին, հարավարևելքից` Սյունիքին, հարավից` Նախիջևանի Հանրապետությանը (Ադրբեջան), արևմուտքից` Արարատի մարզին։ Վայոց ձորը բնակատեղի է եղել վաղնջական ժամանակներից։ Այս փաստի մասին վկայում են պեղումների ընթացքում հայտանաբերված նախամարդու իրերը, բրոնզե դարին վերաբեող դաշույնները, ճարմանդները, ապարանջանները, մատանիները և այլ իրեր։ Ժայռերին հայտնաբերվել են բազում փորագրություններ, որսորդական տեսարաններով և զանազան կենդանիներով։ Իսկ 2008 թվականին միջազգային հնագիտական արշավախմբի կողմից Վայոց ձորում կատարված նոր հայտնագործությունը ևս մեկ անգամ ապացուցեց, որ Վայոց ձորը եղել է բնակատեղի ավելի քան 5000 տարվա վաղեմությամբ։",
       img: "https://th.bing.com/th/id/OIP.YY9cEX4ZTNstuaQi_3f5RQHaCZ?w=337&h=113&c=7&r=0&o=5&dpr=1.3&pid=1.7",
     },
+    {
+      name: "Տեսարժան Վայրեր",
+    },
   ]
   return (
     <div>
 
+      <div style={{ border: "5px solid black" }}>———ՀԱՅԱՍՏԱՆԻ ՄԱՐԶԵՐ———</div>
       <div style={{ display: "flex" }}>
-        <div>{regions.map((x, i) => <div key={i} onClick={() => setRegionN(i)} style={{ border: "1px solid black", backgroundColor: i === regionsN ? "red" : null }}>{x.name}</div>)}</div>
+        <div>{regions.map((x, i) => <div key={i} onClick={() => setRegionN(i)} style={{ border: "1px solid black", backgroundColor: i === regionsN ? "red" : null, margin: "top 100px" }}>{x.name}</div>)}</div>
         <div style={{ border: " 1px solid black" }}>{regions[regionsN].description}</div><img src={regions[regionsN].img} style={{ width: 300 }}></img>
       </div>
     </div>
