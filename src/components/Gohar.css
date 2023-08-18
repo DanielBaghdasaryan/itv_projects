@@ -1,0 +1,22 @@
+.App {
+  background-color: rgb(217, 237, 238);
+}
+
+
+
+.App {
+  background-color: rgb(190, 221, 250);
+}
+
+.box {
+  background-color: rgb(217, 237, 238);
+}
+
+
+.image {
+  max-width: 70%;
+  max-height: 70%;
+  width: auto;
+  height: auto;
+  position: fixed
+}
