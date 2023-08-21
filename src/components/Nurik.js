@@ -70,7 +70,10 @@ function App() {
     <div>
       {vernagir.map(
         (a) => <div
-          style={{ border: "1px solid black", width: "1494px", height: "45px", padding: "20px", backgroundColor: "rgb(244, 228, 240)", textAlign: "center", fontSize: "25px" }}>
+          style={{
+            border: "1px solid black", width: "1494px", height: "45px", padding: "20px", backgroundColor: "rgb(244, 228, 240)",
+            textAlign: "center", fontSize: "25px"
+          }}>
           {a.name1}
         </div>
       )}

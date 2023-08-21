@@ -2,6 +2,7 @@ import { useState } from 'react'
 function App() {
   const [regionN, setRegionN] = useState(0)
   const [showDescer, setShowDescr] = useState(false)
+  const [image, setImige] = useState('')
   const regions = [
     {
       name: "Վահան Տերյան(Վահան Սուքիասի Տեր-Գրիգորյան)",
@@ -82,42 +83,60 @@ function App() {
       img: "data:image/jpeg;base64,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",
       title: "<< Աշխարհում մայրն է միակ Աստվածը, որն ուրացող չունի >>, <<Կինն ինչ էլ լինի, մոր վատը չկա>>, <<Երիտասարդ հասակում գործիր այնպես, որ ծերությունը անսնունդ չմնա>>, <<Ամեն ինչ կարելի է շտկել, կպցնել, բացի մարդու կոտրված սրտից>>, <<Մարդը մարդու ցավը միշտ էլ կհասկանա, եթե չխանգարեն, եթե թողնեն>>, <<Ամենահասարակ թվացող բառն էլ հրաշք է, եթե տեղին գործածես։ …Բառը՝ ամեն ուզածդ բառը, իր տեղը գործածող բանաստեղծին ժողովուրդը այժմ էլ վարպետ է կոչում>>, <<Ինչպես որ ընտանիքից է ակունք առնում հայրենիքը, այդպես էլ ազգից, ազգայինից է սկսվում համամարդկայինը>>, <<Միակ արդարության ոսկե կշեռքը ժողովուրդն է։ Քննադատը մի անցք է, ժողովուրդը վիթխարի մաղ, երկնամաղ>>, <<Ինչպես կաղնի ծառն սկսվում է հողից, այնպես էլ պոեզիան սկսվում է հայրենի խրճիթից>>, <<Հայ ժողովուրդը հավերժ է բոլոր նեղ ձորերի մեջ էլ, իր ըղձանքների անսահման դաշտերում էլ>>",
       birbth: "1914",
-      death: "1984"
+      death: "1984",
     },
   ]
   return (
-    <div>
-      <div style={{ border: "10px solid black", backgroundColor: "rgb(150, 150, 150)", display: 'flex', justifyContent: 'center' }}>ՀԱՅ ՄԵԾ ԳՐՈՂՆԵՐ</div>
-      <div style={{ display: "flex" }}>
-        <div>
-          {regions.map(
-            (x, i) => <div
-              key={i}
-              onClick={() => setRegionN(i)}
-              style={{ border: "4px solid black", "padding": 10, backgroundColor: 1 % 2 ? "rgb(150, 150, 150)" : null }}>
-              {x.name}
-            </div>
-          )}
-        </div>
-        <div style={{ border: "10px solid black", "padding": 20, backgroundColor: "rgb(150, 150, 150)" }}>
+    image !== ''
+      ? <div onClick={() => setImige('')}
+        style={{
+          height: "100%",
+          width: "100%",
+          position: "fixed",
+          display: 'flex',
+          justifyContent: "center",
+          alignItems: 'center',
+          backgroundColor: 'black'
+        }}>
+        <img src={image} style={{
+          maxWidth: "70%",
+          maxHeight: "70%",
+          width: "auto",
+          height: "auto"
+        }} />
+      </div >
+      : <div>
+        <div style={{ border: "10px solid black", backgroundColor: "rgb(150, 150, 150)", display: 'flex', justifyContent: 'center' }}>{regions[regionN].name}</div>
+        <div style={{ display: "flex" }}>
+          <div>
+            {regions.map(
+              (x, i) => <div
+                key={i}
+                onClick={() => setRegionN(i)}
+                style={{ border: "4px solid black", "padding": 10, backgroundColor: i === regionN ? "white" : "rgb(150, 150, 150)" }}>
+                {x.name}
+              </div>
+            )}
+          </div>
+          <div style={{ border: "10px solid black", "padding": 20, backgroundColor: "rgb(150, 150, 150)" }}>
 
-          <div dangerouslySetInnerHTML={{ __html: regions[regionN].description }} style={{ border: "10px solid black", "padding": 20, backgroundColor: "rgb(150, 150, 150)" }} />
-        </div>
-        <div style={{ border: "10px solid black", "padding": 20, backgroundColor: "rgb(120, 120, 120)" }}>
-          <img onClick={() => setShowDescr(!showDescer)} src={regions[regionN].img} />
-          {
-            showDescer ? <div>
-              <div> Ծնվել է - {regions[regionN].birbth}</div>
-              <div>Մահացել է - {regions[regionN].death}</div>
-            </div> : null
-          }
-        </div>
-        <div style={{ border: "10px solid black", "padding": 20, backgroundColor: "rgb(150, 150, 150)" }}>
-          {regions[regionN].title}
-        </div>
+            <div dangerouslySetInnerHTML={{ __html: regions[regionN].description }} style={{ border: "10px solid black", "padding": 20, backgroundColor: "rgb(150, 150, 150)" }} />
+          </div>
+          <div style={{ border: "10px solid black", "padding": 20, backgroundColor: "rgb(120, 120, 120)" }}>
+            <img onClick={() => setImige(regions[regionN].img)} src={regions[regionN].img} style={{ "width": 400 }} />
+            {
+              showDescer ? <div>
+                <div> Ծնվել է - {regions[regionN].birbth}</div>
+                <div>Մահացել է - {regions[regionN].death}</div>
+              </div> : null
+            }
+          </div>
+          <div style={{ border: "10px solid black", "padding": 20, backgroundColor: "rgb(150, 150, 150)" }}>
+            {regions[regionN].title}
+          </div>
 
+        </div>
       </div>
-    </div>
   )
 }
 export default App

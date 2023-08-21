@@ -82,12 +82,11 @@ function App() {
           <div style={{ border: "1px solid black" }}>
             <div dangerouslySetInnerHTML={{ __html: regions[regionN].description }}></div>
           </div>
-          <div>
+          <div >
             <img onClick={() => setImage(regions[regionN].img)} src={regions[regionN].img} style={{ width: 220 }} />
           </div>
         </div>
       </div>
   )
 }
-
 export default App

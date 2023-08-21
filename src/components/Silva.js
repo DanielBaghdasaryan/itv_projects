@@ -261,52 +261,63 @@ function App() {
 
   return (
     <div>
-      <div style={{ display: 'flex', border: '1px solid black', width: 700, height: 70, justifyContent: 'center', marginLeft: 400, marginBottom: 20, marginTop: 20, fontSize: 30, paddingTop: 20, borderRadius: 10, backgroundColor: 'rgb(183,178,190)', }}>
-        Regions of Armenia
-      </div>
-      <div style={{ display: 'flex', border: '1px solid white', width: 900, justifyContent: 'center', marginLeft: 350, marginBottom: 20, marginTop: 20, fontSize: 20, paddingTop: 20, borderRadius: 10, }}>
-        Armenia, landlocked country of Transcaucasia, lying just south of the great mountain range of the Caucasus and fronting the northwestern extremity of Asia. To the north and east Armenia is bounded by Georgia and Azerbaijan,
-        while its neighbours to the southeast and west are, respectively, Iran and Turkey. Naxçıvan, an exclave of Azerbaijan, borders Armenia to the southwest. The capital is Yerevan (Erevan).
-        Armenia was converted to Christianity about 300 CE, becoming the first kingdom to adopt the religion after the Arsacid king Tiridates III was converted by St. Gregory the Illuminator. The Armenians have therefore
-        maintained an ancient and rich liturgical and Christian literary tradition. Believing Armenians today belong mainly to the Armenian Apostolic (Orthodox) Church or the Armenian Catholic Church, in communion with Rome.
-      </div>
-      <div style={{ display: 'flex', border: '1px solid white', marginLeft: 400, marginBottom: 20, marginTop: 20, }}>
-        <iframe src="https://www.google.com/maps/d/embed?mid=1zz3z34y_GqBmv7j9YWFIvVgHuZw&ehbc=2E312F" width="640" height="480"></iframe>
-      </div>
-      <div style={{ display: 'flex', marginLeft: 200, }}>
-        <div style={{ display: "flex" }}>
-          <div>
-            {regions.map(
-              (x, i) => <div
-                key={i}
-                onClick={() => setRegioN(i)}
-                style={{ border: '1px solid black', width: 250, height: 50, padding: 10, backgroundColor: i === regionN ? "rgb( 183,178,190 )" : "white", cursor: "pointer" }}
-              >
-                {x.name} </div>
+      <div style={{ backgroundColor: 'rgb(2242,242,248)' }}>
+        <div style={{ display: 'flex', border: '1px solid black', width: 700, height: 70, justifyContent: 'center', marginLeft: 400, marginBottom: 20, marginTop: 20, fontSize: 30, paddingTop: 20, borderRadius: 10, backgroundColor: 'rgb(193,179,215)', }}>
+          Regions of Armenia
+        </div>
+        <div style={{ display: 'flex', border: '1px solid white', width: 900, justifyContent: 'center', marginLeft: 350, marginBottom: 20, marginTop: 20, fontSize: 20, paddingTop: 20, borderRadius: 10, backgroundColor: 'white' }}>
+          Armenia, landlocked country of Transcaucasia, lying just south of the great mountain range of the Caucasus and fronting the northwestern extremity of Asia.
+          To the north and east Armenia is bounded by Georgia and Azerbaijan,
+          while its neighbours to the southeast and west are, respectively, Iran and Turkey. Naxçıvan, an exclave of Azerbaijan, borders Armenia to the southwest. The capital is Yerevan (Erevan).
+          Armenia was converted to Christianity about 300 CE, becoming the first kingdom to adopt the religion after the Arsacid king Tiridates III was converted by St. Gregory the Illuminator. The Armenians have therefore
+          maintained an ancient and rich liturgical and Christian literary tradition. Believing Armenians today belong mainly to the Armenian Apostolic (Orthodox) Church or the Armenian Catholic Church, in communion with Rome.
+        </div>
+        <div style={{ display: 'flex', marginLeft: 400, marginBottom: 20, marginTop: 20, }}>
+          <iframe src="https://www.google.com/maps/d/embed?mid=1zz3z34y_GqBmv7j9YWFIvVgHuZw&ehbc=2E312F" width="640" height="480"></iframe>
+        </div>
+        <div style={{ display: 'flex', marginLeft: 130, }}>
+          <div style={{ display: "flex" }}>
+            <div>
+              {regions.map(
+                (x, i) => <div
+                  key={i}
+                  onClick={() => setRegioN(i)}
+                  style={{ border: '1px solid black', width: 250, height: 50, padding: 10, backgroundColor: i === regionN ? 'rgb(193,179,215)' : "white", cursor: "pointer", margin: '10px' }}
+                >
+                  {x.name} </div>
 
-            )}
-          </div>
+              )}
+            </div>
+
+            <div style={{ border: '1px solid black', width: 800, padding: 10, fontSize: 18, backgroundColor: 'white', margin: '5px' }}>
+              {regions[regionN].description.map(
+                (x, i) => (
+                  <div>
+                    <div style={{ margin: ' 10px', color: 'rgb(165,137,193)', fontSize: '25px' }}>{x.title}</div>
+                    <div style={{ marginBottom: "10px", fontSize: '17px' }}>{x.paragraph}</div>
+                  </div>
+                )
+              )}
+            </div>
+
+            <div >
+              <img src={regions[regionN].img} style={{ width: 300 }} />
+              <div style={{ margin: 5 }}>
+                <div style={{ border: '1px solid rgb(222,41,57)', width: 250, height: 40, backgroundColor: "rgb(222,41,57)" }}></div>
+                <div style={{ border: '1px solid rgb(57,69,173)', width: 250, height: 40, backgroundColor: "rgb(57,69,173)" }}></div>
+                <div style={{ border: '1px solid rgb(235,146,0)', width: 250, height: 40, backgroundColor: "rgb(235,146,0)" }}></div>
+              </div>
+              <iframe width="300" height="200" src="https://www.youtube.com/embed/ouQJSNYxjLM" title="The History of Armenia : Every Year" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <iframe width="300" height="200" src="https://www.youtube.com/embed/aT9A_nCuU-Q" title="The history of Armenia Summarized" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
 
 
 
-
-          <div style={{ border: '1px solid black', width: 700, padding: 10, fontSize: 18, }}>
-            {regions[regionN].description.map(
-              (x, i) => (
-                <div key={i} style={{ backgroundColor: i % 2 ? 'white' : null }}>
-                  <div style={{ margin: ' 10px', color: "rgb(40,103,160)", fontSize: '25px' }}>{x.title}</div>
-                  <div style={{ marginBottom: "10px", fontSize: '17px' }}>{x.paragraph}</div>
-                </div>
-              )
-            )}
-          </div>
-          <div>
-            <img src={regions[regionN].img} style={{ width: 300 }} />
           </div>
         </div>
-      </div>
 
-    </div>
+      </div>
+    </div >
 
 
 
